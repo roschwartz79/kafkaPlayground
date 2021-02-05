@@ -11,4 +11,9 @@ public class Listener {
     public void listen(@Payload String message)  throws Exception {
         System.out.println("Consumed " + message);
     }
+
+    @KafkaListener(topics = "kafka-playground-2")
+    public void listenNewTopic(@Payload String message) throws Exception {
+        System.out.println("Consumed " + message);
+    }
 }

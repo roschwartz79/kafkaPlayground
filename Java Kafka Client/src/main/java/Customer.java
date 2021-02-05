@@ -1,5 +1,5 @@
 // This class is used to demonstrate writing a custom serializer
-public class Customer {
+public class 8Customer {
     private int customerID;
     private String customerName;
 
