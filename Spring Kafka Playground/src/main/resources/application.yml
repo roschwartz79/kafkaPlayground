@@ -1,0 +1,6 @@
+spring:
+  kafka:
+    consumer:
+      group-id: local_rob
+      bootstrap-servers: kafka:9092
+      auto-offset-reset: earliest
