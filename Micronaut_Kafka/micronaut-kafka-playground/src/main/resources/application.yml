@@ -1,0 +1,4 @@
+micronaut:
+  application:
+    name: micronautKafkaPlayground
+kafka.bootstrap.servers: kafka:9092
