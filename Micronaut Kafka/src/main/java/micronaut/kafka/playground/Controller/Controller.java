@@ -4,8 +4,10 @@ package micronaut.kafka.playground.Controller;
 import io.micronaut.http.MediaType;
 import io.micronaut.http.annotation.*;
 import micronaut.kafka.playground.Producer;
+import micronaut.kafka.playground.model.Message;
 
 import javax.inject.Inject;
+import java.util.List;
 
 @io.micronaut.http.annotation.Controller
 public class Controller {
@@ -33,6 +35,14 @@ public class Controller {
     public String publish(@QueryValue String message, @QueryValue String topic){
         producer.sendMessage(topic, message);
         return "Produced " + message + " to topic " + topic;
+    }
+
+    @Post("/ProduceBatch")
+    @Produces(MediaType.TEXT_PLAIN)
+    public String publishBatchMessage(@QueryValue String message1, @QueryValue String message2,
+                                      @QueryValue String name1, @QueryValue String name2) {
+        producer.send(List.of(new Message(message1, name1), new Message(message2, name2)));
+        return "Success!";
     }
 
 

@@ -2,3 +2,7 @@ micronaut:
   application:
     name: micronautKafkaPlayground
 kafka.bootstrap.servers: kafka:9092
+kafka:
+  producers:
+    rob-test:
+      retries: 5
